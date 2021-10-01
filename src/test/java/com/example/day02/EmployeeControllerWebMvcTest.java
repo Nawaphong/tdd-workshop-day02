@@ -24,10 +24,12 @@ public class EmployeeControllerWebMvcTest {
 	public void getById() throws Exception{
 		MvcResult mvcResult = mvc.perform(get("/employee/1")).andExpect(status().isOk()).andReturn();
 		
-		ObjectMapper objectMapper = new ObjectMapper();
-		EmployeeResponse employee = objectMapper.readValue(mvcResult.getResponse().getContentAsByteArray(), EmployeeResponse.class);
-		assertEquals("nawaphong", employee.getName());
-		assertEquals(1, employee.getId());
+		ObjectMapper mapper = new ObjectMapper();
+		 EmployeeResponse result
+         = mapper.readValue(mvcResult.getResponse().getContentAsByteArray(),
+                            EmployeeResponse.class);
+		assertEquals(1, result.getId());
+		assertEquals("nawaphong", result.getName());
 	}
 	
 }
