@@ -13,7 +13,7 @@ public class EmployeeController {
 	
 	@GetMapping("/employee/{id}")
 	public EmployeeResponse getById(@PathVariable String id) {
-		EmployeeResponse employee = service.get(id);
+		EmployeeResponse employee = service.get(Integer.parseInt(id));
 		return employee;
 	}
 }

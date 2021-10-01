@@ -30,7 +30,7 @@ public class EmployeeControllerWebMvcTest {
 	public void getById() throws Exception{
 		//Arrange
 		EmployeeResponse data = new EmployeeResponse(1,"nawaphong");
-		when(employeeService.get("1")).thenReturn(data);
+		when(employeeService.get(Integer.parseInt("1"))).thenReturn(data);
 		
 		//Act
 		MvcResult mvcResult = mvc.perform(get("/employee/1")).andExpect(status().isOk()).andReturn();
