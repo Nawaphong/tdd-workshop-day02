@@ -8,7 +8,7 @@ public class EmployeeResponse {
 	@Getter @Setter private String name;
 	
 
-	EmployeeResponse(int id,String name){
+	public EmployeeResponse(int id,String name){
 		this.id = id;
 		this.name = name;
 	}
