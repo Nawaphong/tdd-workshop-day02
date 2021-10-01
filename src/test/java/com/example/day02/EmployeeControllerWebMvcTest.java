@@ -29,7 +29,7 @@ public class EmployeeControllerWebMvcTest {
 	@Test
 	public void getById() throws Exception{
 		//Arrange
-		EmployeeResponse data = new EmployeeResponse(1,"XYZ");
+		EmployeeResponse data = new EmployeeResponse(1,"nawaphong");
 		when(employeeService.get("1")).thenReturn(data);
 		
 		//Act
